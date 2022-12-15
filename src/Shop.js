@@ -22,15 +22,17 @@ function Shop() {
 
   return (
     <div className="App">Shop
-        {items.length > 0 && <h1>{items[0].item.itemId}</h1>}
-
         {items.length > 0 && 
             <div>
                 {items.map(item => (
-                    <h1 key={item.itemId}>
-                        <div>{console.log(item.item.name)}</div>
-                        <div>{item.item.name}</div>
-                    </h1>
+
+                   <div className="card">
+                        <div className="container">
+                            <Link to={`/shop/${item.itemId}`}>{item.item.name}</Link>
+                            <img id='' src={item.item.images.icon}></img>
+                            <p>{item.item.description}</p> 
+                        </div>
+                   </div> 
                 ))}
             </div>
         
