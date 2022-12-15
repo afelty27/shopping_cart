@@ -21,7 +21,7 @@ function Shop() {
     }
 
   return (
-    <div className="App">Shop
+    <div className="shop">
         {items.length > 0 && 
             <div>
                 {items.map(item => (

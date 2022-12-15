@@ -1,5 +1,5 @@
 import './App.css';
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import Nav from './Nav';
 import Home from './Home';
 import Shop from './Shop';
@@ -9,6 +9,23 @@ import ItemDetail from './ItemDetail';
 import {BrowserRouter as Router, Switch, Route, Routes} from 'react-router-dom';
 
 function App() {
+
+  const [cart, setCart] = useState(
+    {
+      items: 
+      [
+        {
+          itemName: "",
+          itemId: "",
+          itemPrice: 0,
+          itemQuantity: 0
+        }
+      ]
+      ,
+      cartTotal: 0
+    }
+  );
+
   return (
     <Router>
       <div className='App'>
