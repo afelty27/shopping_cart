@@ -2,18 +2,9 @@ import React, {useState, useEffect} from 'react';
 import './App.css'
 import {Link} from 'react-router-dom';
 
-function itemDetail() {
+function ItemDetail() {
 
-    useEffect(() => {
-        fetchItems();
-    }, []);
-
-    const [item,setItem] = useState([]);
-
-    const fetchItem = async () => {
-        
-    }
-
+   
   return (
    <div>
         <h1>Item</h1>
@@ -21,4 +12,4 @@ function itemDetail() {
   );
 }
 
-export default itemDetail;
+export default ItemDetail;

@@ -20,11 +20,11 @@ function Shop() {
 
   return (
     <div className="App">Shop
-        <h1>{items[0].item.name}</h1>
+        {/* <h1>{items[0].item.name}</h1> */}
         <div>
             {items.map(item => (
                 <h1 key={item.itemId}>
-                    <Link style={navStyle} to={`/shop/${item.itemId}`}>{items.name}</Link>
+                    <Link to={`/shop/${item.itemId}`}>{items.name}</Link>
                 </h1>
             ))}
         </div>
