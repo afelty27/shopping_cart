@@ -1,41 +1,48 @@
 import React, {useState, useEffect} from 'react';
 import './App.css'
-import {Link} from 'react-router-dom';
+import {Route, useParams, Link} from 'react-router-dom';
 
 function ItemDetail() {
 
+    const [item,setItem] = useState(
+       
+    );
+
+    const params = useParams();
+
     useEffect(() => {
-        fetchItem();
+        fetchItem()
     }, []);
+    
 
     const fetchItem = async () => {
         //https://fortnite-api.theapinetwork.com/item/get?id={{itemid}}
         const fetchItem = await fetch(
-            //ERROR match not defined
-            // `https://fortnite-api.theapinetwork.com/item/get?id=${match.params.id}`
+            `https://fortnite-api.theapinetwork.com/item/get?id=${params.id}`
         );
-        console.log()
         const item = await fetchItem.json();
-        console.log("item would appear here")
+        setItem(item)
+        console.log(item)
     }
 
-   
+
   return (
    <div>
-        <h1>Item</h1>
+        
+        <div className='productDisplay'>
+            <img src={item && item.data.item.images.icon ? `${item.data.item.images.icon}` : ""}></img>
+            <div className='productInfo'>
+                <h1 id='name'>{item && item.data.item.name ? item.data.item.name : "Not loaded yet"}</h1>
+                <div id='price'>${item && item.data.item.cost ? `${item.data.item.cost}` : "Not loaded yet"}</div>
+                <div className='specs'>{item && item.data.item.description ? item.data.item.description : "Not loaded yet"}</div>
 
-        <div className="card">
-            <div className="container">
-                <h4><b>John Doe</b></h4>
-                <p>Architect & Engineer</p>
+                <input type="number" id="quantity" name="quantity" min="0" max="100"></input>
+                <button>Add to Cart</button>
+
             </div>
+
         </div>
-        <div className="card">
-            <div className="container">
-                <h4><b>Card2</b></h4>
-                <p>Stuff</p>
-            </div>
-        </div>
+
 
    </div>
   );

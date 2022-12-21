@@ -20,13 +20,20 @@ function Shop() {
         console.log("exit fetch items")
     }
 
+    //generate random integer between 0 and max
+    //max: integer value
+    function getRandomInt(max) {
+        return Math.floor(Math.random() * max);
+    }  
+  
+
   return (
     <div className="shop">
         {items.length > 0 && 
             <div>
                 {items.map(item => (
 
-                   <div className="card">
+                   <div key={getRandomInt(10000)} className="card">
                         <div className="container">
                             <Link to={`/shop/${item.itemId}`}>{item.item.name}</Link>
                             <img id='' src={item.item.images.icon}></img>
