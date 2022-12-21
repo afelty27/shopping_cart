@@ -6,14 +6,13 @@ function ItemDetail() {
 
     const [item,setItem] = useState(
        
-    );
+        );
 
     const params = useParams();
 
     useEffect(() => {
         fetchItem()
     }, []);
-    
 
     const fetchItem = async () => {
         //https://fortnite-api.theapinetwork.com/item/get?id={{itemid}}
@@ -25,9 +24,9 @@ function ItemDetail() {
         console.log(item)
     }
 
+    return (
 
-  return (
-   <div>
+        <div>
         
         <div className='productDisplay'>
             <img src={item && item.data.item.images.icon ? `${item.data.item.images.icon}` : ""}></img>
@@ -45,7 +44,9 @@ function ItemDetail() {
 
 
    </div>
-  );
+
+    );
 }
 
 export default ItemDetail;
+
