@@ -11,10 +11,29 @@ import {BrowserRouter as Router, Switch, Route, Routes} from 'react-router-dom';
 
 //todo - 
 //finish updateProductCart (1) why work?? 2) what if prod not found
-//test addToProductCart
-//delete/recreate handle method
 
 function App() {
+
+  const [shopItems, setShopItems] = useState(
+    {
+    }
+    
+  )
+
+  const updateShop = (itemList) => {
+
+    // console.log("enter updateShop in App.js")
+    // console.log("itemList param: ")
+    // console.log(itemList)
+
+    setShopItems(prevState => {
+      // console.log("here")
+      // console.log(itemList)
+      return {
+        items: itemList
+      }
+    }) 
+  }
 
   const [cart, setCart] = useState(
     {
@@ -35,70 +54,40 @@ function App() {
   );
 
   useEffect(() => {
-    updateCartTotal()
-  }, [cart["items"]]);
+     updateCartTotal()
+    // console.log("cart: ")
+    // console.log(cart)
+  }, [cart.items]);
 
-  console.log("cart: ")
-  console.log(cart)
+  // console.log("cart: ")
+  // console.log(cart)
 
-
-  //need to update: need three options - add new product, update existing product, delete product
-  const updateCart = (newProdObj, quantity) => {
-
-      let index = findCartItem(newProdObj.data.item.itemId);
-      let newObj = {
-        itemName: newProdObj.data.item.name,
-        itemId: newProdObj.data.item.itemId,
-        itemDescription: newProdObj.data.item.description,
-        itemIcon: newProdObj.data.images.icon,
-        itemPrice: newProdObj.data.item.cost,
-        itemQuantity: quantity
-      }
-
-    setCart(prevState => {
-      return {
-        ...prevState,
-        ["itmes"]: [
-          ...prevState["items"][index],
-          newObj
-        ]
-      }
-    })
-
-    //works
-    // setCart (prevState => {
-    //   return {
-    //     ...prevState,
-    //     ["cartTotal"]: calcTotal()
-    //   }
-    // })
-
-  }
 
   //adds new item object to cart item list
   //newProdObj: object from the api call of object being added
   //quantity: integer of how many of the object are requested
+  //works
   const addProductToCart = (newProdObj, quantity) => {
     let newObj = {
-      itemName: newProdObj.data.item.name,
-      itemId: newProdObj.data.item.itemId,
-      itemDescription: newProdObj.data.item.description,
-      itemIcon: newProdObj.data.images.icon,
-      itemPrice: newProdObj.data.item.cost,
+      itemName: newProdObj.item.name,
+      itemId: newProdObj.itemId,
+      itemDescription: newProdObj.item.description,
+      itemIcon: newProdObj.item.images.icon,
+      itemPrice: (newProdObj.item.cost == "???") ? getRandomInt(50) : newProdObj.item.cost,
       itemQuantity: quantity
     }
 
-    let newList = cart.items.push(newObj);
+    let newList = cart.items;
+    newList.push(newObj)
 
     setCart(prevState => {
       return {
         ...prevState,
-        ["items"]: [
-          ...prevState["items"],
-          newList
-        ]
+        ["items"]: newList
       }
     })
+
+    updateCartTotal();
   }
 
   //updates the quantity of an object already in cart
@@ -195,9 +184,9 @@ function App() {
       <div className='App'>
         <Nav />
         <Routes>
-          <Route path='/' exact element={<Home state={cart} deleteFromProductCart={deleteFromProductCart} updateProductCart={updateProductCart}/>} />
+          <Route path='/' exact element={<Home itemState={shopItems} state={cart} addFromProductCart={addProductToCart} deleteFromProductCart={deleteFromProductCart} updateProductCart={updateProductCart}/>} />
           <Route path='/about' element={<About />} />
-          <Route path='/shop' exact element={<Shop />} />
+          <Route path='/shop' exact element={<Shop shopState={shopItems} setShopState={updateShop} />} />
           <Route path='/shop/:id' element={<ItemDetail />} />
           <Route path='/cart' element={<Cart />} />
         </Routes>
