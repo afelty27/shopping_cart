@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import './App.css'
 import {Route, useParams, Link} from 'react-router-dom';
 
-function ItemDetail() {
+function ItemDetail(props) {
 
     const [item,setItem] = useState(
        
@@ -24,6 +24,11 @@ function ItemDetail() {
         console.log(item)
     }
 
+    if (item && item.data.item) {
+        console.log("success")
+        console.log(item.data)
+    } else { console.log("problem here")}
+
     return (
 
         <div>
@@ -35,8 +40,8 @@ function ItemDetail() {
                 <div id='price'>${item && item.data.item.cost ? `${item.data.item.cost}` : "Not loaded yet"}</div>
                 <div className='specs'>{item && item.data.item.description ? item.data.item.description : "Not loaded yet"}</div>
 
-                <input type="number" id="quantity" name="quantity" min="0" max="100"></input>
-                <button>Add to Cart</button>
+                <input id='itemDetailQuant' type="number" name="quantity" min="0" max="100" defaultValue="1"></input>
+                <button className='addBtn' onClick={() => { item && item.data.item ? props.addProductToCart(item.data, document.getElementById("itemDetailQuant").value) : console.log("error")}}>Add to Cart</button>
 
             </div>
 
