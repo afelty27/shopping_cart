@@ -104,7 +104,7 @@ function App() {
       //ensure item is in cart
       if (findCartItem(prodId) != -1) {
         console.log("enter if")
-        const newObj = cart.items;
+        const newObj = [...cart.items];
         newObj[findCartItem(prodId)].itemQuantity = newQuantity;
         console.log("check update quant: ")
         console.log(newObj[findCartItem(prodId)].itemQuantity)
