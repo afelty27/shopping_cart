@@ -82,6 +82,11 @@ function App() {
     updateCartTotal();
   }
 
+  //try a useEffect to fix the bug below:
+  useEffect( () => {
+
+  }, [])
+
   //updates the quantity of an object already in cart
   //prodId: string containing id of the desired product
   //newQuantity: integer of new quantity value of the desired product
@@ -91,6 +96,8 @@ function App() {
     console.log("prod Id: " + prodId)
     console.log("new quantity: " + newQuantity)
 
+    //FIX - setCart is running after updateCartTotal() but its not an asyncronous function?
+    //this is because useState is asyncronous
     setCart( prevState => {
       console.log("enter set cart")
 
