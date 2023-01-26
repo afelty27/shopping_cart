@@ -18,8 +18,7 @@ function CartItemDisplay(props) {
         name="quantity"
         min="0"
         max="100"
-        value={quantity}
-        defaultValue={quantity}
+        defaultValue={props.index.itemQuantity}
         onChange={(event) => {
           setQuantity(event.target.value);
         }}
