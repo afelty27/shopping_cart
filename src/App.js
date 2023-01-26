@@ -1,6 +1,6 @@
 //make sure not accessing DOM anywhere+
 //save cart to local storage so doesn't go away when refresh+
-//use local storage to automatically refill the cart when reloaded
+//use local storage to automatically refill the cart when reloaded+
 //style
 
 import "./App.css";
