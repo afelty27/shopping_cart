@@ -1,6 +1,6 @@
-//make sure not accessing DOM anywhere
-//save cart to local storage so doesn't go away when refresh
-//make checkoug page that then saves data into a json
+//make sure not accessing DOM anywhere+
+//save cart to local storage so doesn't go away when refresh+
+//use local storage to automatically refill the cart when reloaded
 //style
 
 import "./App.css";
@@ -30,9 +30,32 @@ function App() {
     });
   };
 
+  //getLocalStorage for cart
+  const getLocalStorageCartItems = () => {
+    console.log("enter getLocalStorageCartItems");
+    let newCartData = JSON.parse(localStorage.getItem("cart"));
+    console.log(`local storage data is: ${newCartData}`);
+
+    if (newCartData === null) {
+      return [];
+    } else {
+      console.log(`LocalStorage cart item: ${newCartData.items}`);
+      return newCartData.items;
+    }
+  };
+
+  const getLocalStorageCartTotal = () => {
+    let newCartData = JSON.parse(localStorage.getItem("cart"));
+    if (newCartData === null) {
+      return 0;
+    } else {
+      return newCartData.cartTotal;
+    }
+  };
+
   const [cart, setCart] = useState({
-    items: [],
-    cartTotal: 0,
+    items: getLocalStorageCartItems(),
+    cartTotal: getLocalStorageCartTotal(),
   });
 
   console.log("cart items: " + cart.items);
@@ -52,14 +75,13 @@ function App() {
   //quantity: integer of how many of the object are requested
   const addProductToCart = (newProdObj, quantity) => {
     //ensure item is not in cart already
-    if (findCartItem(newProdObj.itemId) == -1) {
+    if (findCartItem(newProdObj.itemId) === -1) {
       console.log("price: " + newProdObj.item.cost);
       let newObj = {
         itemName: newProdObj.item.name,
         itemId: newProdObj.itemId,
         itemDescription: newProdObj.item.description,
         itemIcon: newProdObj.item.images.icon,
-        // itemPrice: (newProdObj.item.cost == "???") ? getRandomInt(50) : newProdObj.item.cost,
         itemPrice: getRandomInt(50),
         itemQuantity: quantity,
       };
@@ -215,12 +237,3 @@ function App() {
 }
 
 export default App;
-{
-  /* <div className="App">
-<Nav />
-<Route path='/home' component={Home}/>
-<Route path='/shop' component={Shop}/>
-</div> */
-}
-
-//CartItemDisplay -> don't touch DOM, make state and do const
