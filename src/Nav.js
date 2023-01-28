@@ -9,8 +9,8 @@ function Nav() {
   };
 
   return (
-    <nav>
-      <h3>Logo</h3>
+    <nav className="bg-dark">
+      <h5>Logo</h5>
       <ul className="nav-links">
         <li>
           <Link style={navStyle} to="/">

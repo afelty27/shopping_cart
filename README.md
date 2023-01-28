@@ -6,6 +6,7 @@ Things to fix/add
 -Navbar: look up examples of nice layout
 -Home: do
 -Contact: do or delete
+--make footer
 
 # Getting Started with Create React App
 
