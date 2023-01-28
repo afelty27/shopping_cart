@@ -1,3 +1,12 @@
+Things to fix/add
+
+-little bubble on cart icon indicating number of items in cart
+-Cart page: when large screen not taking up full width; when small screen not adjusting nicely
+-Shop page: some sort of nicer layout/title on the page? Look up examples
+-Navbar: look up examples of nice layout
+-Home: do
+-Contact: do or delete
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
