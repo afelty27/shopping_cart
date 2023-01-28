@@ -11,6 +11,7 @@ import Shop from "./Shop";
 import About from "./About";
 import Cart from "./Cart";
 import ItemDetail from "./ItemDetail";
+import Footer from "./Footer.js";
 import {
   BrowserRouter as Router,
   Switch,
@@ -231,6 +232,7 @@ function App() {
             }
           />
         </Routes>
+        <Footer />
       </div>
     </Router>
   );
