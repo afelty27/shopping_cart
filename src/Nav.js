@@ -23,11 +23,6 @@ function Nav() {
           </Link>
         </li>
         <li>
-          <Link style={navStyle} to="/about">
-            Contact
-          </Link>
-        </li>
-        <li>
           <Link style={navStyle} to="/cart">
             <svg width="24px" height="24px" viewBox="0 0 24 24">
               <path
