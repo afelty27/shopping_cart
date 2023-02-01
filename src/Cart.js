@@ -9,7 +9,7 @@ function Cart(props) {
   console.log(props.userCart);
 
   return (
-    <div className="App">
+    <div className="App container align-items-center">
       <div className="h-100 h-custom">
         <div className="container h-100 py-5">
           <div className="row d-flex justify-content-center align-item-center h-100">
