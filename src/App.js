@@ -79,6 +79,7 @@ function App() {
     if (findCartItem(newProdObj.itemId) === -1) {
       console.log("price: " + newProdObj.item.cost);
       let newObj = {
+        key: getRandomInt(10000),
         itemName: newProdObj.item.name,
         itemId: newProdObj.itemId,
         itemDescription: newProdObj.item.description,
@@ -183,7 +184,7 @@ function App() {
   function getNumCartItems() {
     let numItems = 0;
     for (let i = 0; i < cart.items.length; i++) {
-      numItems += cart.items[i].itemQuantity;
+      numItems += parseInt(cart.items[i].itemQuantity);
     }
     return numItems;
   }
@@ -198,7 +199,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Nav />
+        <Nav getNumCartItems={getNumCartItems} />
         <Routes>
           <Route
             path="/"

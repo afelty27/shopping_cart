@@ -1,10 +1,6 @@
 Things to fix/add
 
--little bubble on cart icon indicating number of items in cart
--Cart page: when large screen not taking up full width; when small screen not adjusting nicely
--Price not correct when first add item
--Price not always updating correctly when click update button
--Shop page:
+-Cart page: better design; when small screen not adjusting nicely
 -Item page: better layout
 -Navbar: collapse menu not connected; logo
 

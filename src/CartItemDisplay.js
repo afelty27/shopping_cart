@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 
 //FIX - value not updated when click up or down
 
 function CartItemDisplay(props) {
-  const [quantity, setQuantity] = useState(0);
+  // const [quantity, setQuantity] = useState(0);
 
   return (
     props.userCart.items.length > 0 &&
@@ -34,7 +34,7 @@ function CartItemDisplay(props) {
                 max="100"
                 defaultValue={index.itemQuantity}
                 onChange={(event) => {
-                  setQuantity(event.target.value);
+                  props.updateCart(index.itemId, event.target.value);
                 }}
               ></input>
             </div>
@@ -45,7 +45,7 @@ function CartItemDisplay(props) {
             </p>
           </td>
 
-          <td className="align-middle">
+          {/* <td className="align-middle">
             <div className="d-flex flex-row">
               <button
                 className="btn btn-secondary"
@@ -58,11 +58,11 @@ function CartItemDisplay(props) {
                 Update
               </button>
             </div>
-          </td>
+          </td> */}
           <td className="align-middle">
             <div className="d-flex flex-row">
               <button
-                className="btn btn-danger btn-sm"
+                className="btn btn-outline-secondary btn-sm"
                 type="button"
                 onClick={() => {
                   props.deleteItem(index.itemId);

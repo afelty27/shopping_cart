@@ -23,8 +23,8 @@ function Cart(props) {
                       </th>
                       <th scope="col">Quantity</th>
                       <th scope="col">Price</th>
-                      <th scope="col">Update Cart</th>
-                      <th scope="col">Delete</th>
+                      {/* <th scope="col">Update Cart</th> */}
+                      <th scope="col">Remove</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -59,20 +59,22 @@ function Cart(props) {
       </div> */}
 
       <div className="cartSummary">
-        <h2>Cart Total: ${props.userCart.cartTotal}</h2>
-        <button
-          className="btn btn-success"
-          type="button"
-          onClick={() => {
-            console.log("Local Storage Pressed");
-            console.log("userCart: ");
-            console.log(props.userCart);
-            //local storage can only handle strings so stringify the object. Must use JSON.parse(retrievedObject) when retrieving it
-            localStorage.setItem("cart", JSON.stringify(props.userCart));
-          }}
-        >
-          Checkout
-        </button>
+        <div className="d-flex">
+          <h4>Cart Total: ${props.userCart.cartTotal}</h4>
+          <button
+            className="btn btn-primary btn-sm "
+            type="button"
+            onClick={() => {
+              console.log("Local Storage Pressed");
+              console.log("userCart: ");
+              console.log(props.userCart);
+              //local storage can only handle strings so stringify the object. Must use JSON.parse(retrievedObject) when retrieving it
+              localStorage.setItem("cart", JSON.stringify(props.userCart));
+            }}
+          >
+            Checkout
+          </button>
+        </div>
       </div>
     </div>
   );

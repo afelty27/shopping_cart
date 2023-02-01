@@ -56,7 +56,7 @@ function Nav(props) {
                     transform: "translate(25%, 25%)",
                   }}
                 >
-                  3
+                  {props.getNumCartItems()}
                 </div>
               </Link>
             </li>
