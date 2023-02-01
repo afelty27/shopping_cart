@@ -2,7 +2,6 @@ Things to fix/add
 
 -Cart page: better design; when small screen not adjusting nicely
 -Item page: better layout
--Navbar: collapse menu not connected; logo
 
 # Getting Started with Create React App
 
