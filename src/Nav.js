@@ -1,9 +1,8 @@
 import React from "react";
 import "./App.css";
 import { Link } from "react-router-dom";
-import { mdiAbTesting } from "@mdi/js";
 
-function Nav() {
+function Nav(props) {
   return (
     <nav className="navbar navbar-expand-md navbar-dark bg-dark">
       <div className="container-fluid">

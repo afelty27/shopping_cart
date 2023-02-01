@@ -180,6 +180,14 @@ function App() {
     return -1;
   };
 
+  function getNumCartItems() {
+    let numItems = 0;
+    for (let i = 0; i < cart.items.length; i++) {
+      numItems += cart.items[i].itemQuantity;
+    }
+    return numItems;
+  }
+
   //generate random integer between 0 and max
   //will be used for products whose value is '???'
   //max: integer value
