@@ -38,8 +38,11 @@ function Shop(props) {
     <div className="row row-cols-2 g-3">
       {items.length > 0 &&
         items.map((item) => (
-          <div className="col-12 col-md-6 col-lg-4">
-            <div key={getRandomInt(10000)} className="card m-3 width: 18rem;">
+          <div className="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div
+              key={getRandomInt(10000)}
+              className="card h-100 m-3 width: 18rem;"
+            >
               <Link
                 to={`/shop/${item.itemId}`}
                 style={{ textDecoration: "none", color: "black" }}
