@@ -1,7 +1,40 @@
+<h1>Shopping Cart Application:</h1>
+The Shopping Cart Application is an educational project that was built with the intention of learning how to use components in React, manage state, use CRUD operations, and display the results of these operations to the user in the form of a hypothetical e-commerce page (based off of a Fortnite api for items on the Fortnite shop - inspiration for this api came from: ). My goal for this application was to create components that were easy to understand while not being redundant. Additionally, my goal was to manage the state in a way that reduced confusion and made CRUD operations easy to follow throughout the components. All data is saved to local storage.
+
+<h3> What I Learned/What I Would Do Differently:</h3>
+There are three main changes that I would make to my approach of the project if I were to redo the application.
+
+1. All the component files were simply saved to the src directory rather than creating a specific directory to hold all component files. Creating this additional directory would help organize the files in my project in a way to make them more readible to another user. Additionally, directories for styles and images should be cleaned.
+2. I built the projct without using a global state, resulting in similar props being passed to nearly every component. For an application like this in the future, I would implement a State Management Library (ex: Redux) and use global state to improve the readability of the logic within the application.
+3.
+
+<h3>Credits:</h3>
+This project was inspired as a resonse to the Project: Shopping Cart lesson of the JavaScript Course on the Odin Project. Inspiration for the design of the Home Page was from  https://startbootstrap.com/previews/full-width-pics. Inspiration for how to set up rows of cards was from https://mdbootstrap.com/docs/standard/extended/card-columns/. Inspiration for design aspects of the Cart page were from https://mdbootstrap.com/docs/standard/extended/shopping-carts/.
+
+<h3>Technologies Used:</h3>
+JavaScript
+React
+Bootstrap
+
+<h3>Build Status:</h3>
+This application is fully functional, but not finished in terms of aesthetic design.
+
+<h3>Installation:</h3>
+
+1. Clone repo from GitHub
+2. In terminal, run the command: npm install
+3. In terminal, run the command: npm start
+4. Go to localhost:3000 in a web browser
+
+<h3>Api Reference:</h3>
+This application uses an Api which holds upcoming data for the items in the Fortnite shop. The api can be found at https://fortnite-api.theapinetwork.com/upcoming/get
+
+<h3>How the Application Works:</h3>
+
 Things to fix/add
 
--Cart page: better design; when small screen not adjusting nicely
--Item page: better layout
+-Cart page: better design; when small screen not adjusting nicely; footer not on bottom
+-Shop page: better layout
 
 # Getting Started with Create React App
 
