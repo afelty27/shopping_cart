@@ -41,23 +41,6 @@ function Cart(props) {
         </div>
       </div>
 
-      {/* <div className="headerRow"></div>
-      <div className="products">
-        {props.userCart.items.length > 0 && (
-          <div>
-            {props.userCart.items.map((index) => {
-              return (
-                <CartItemDisplay
-                  index={index}
-                  deleteItem={props.deleteItem}
-                  updateCart={props.updateCart}
-                />
-              );
-            })}
-          </div>
-        )}
-      </div> */}
-
       <div className="cartSummary">
         <div className="d-flex">
           <h4>Cart Total: ${props.userCart.cartTotal}</h4>

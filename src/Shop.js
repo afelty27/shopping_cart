@@ -23,7 +23,6 @@ function Shop(props) {
     console.log(itemsArray);
     setItems(itemsArray);
 
-    //??
     props.setShopState(itemsArray);
     console.log("exit fetch items");
   };
@@ -61,40 +60,7 @@ function Shop(props) {
             </div>
           </div>
         ))}
-
-      {/* <div className="col">
-        <div className="card">
-          <img
-            src="https://mdbcdn.b-cdn.net/img/new/standard/city/041.webp"
-            class="card-img-top"
-            alt="Hollywood Sign on The Hill"
-          />
-          <div className="card-body">
-            <h5 className="card-title">Card Title</h5>
-            <p className="card-text">THIS IS A BUNCH OF TEXTS</p>
-          </div>
-        </div>
-      </div> */}
     </div>
-
-    //-------------------OLD--------------------------
-    //     <div className="shop">
-    //         {items.length > 0 &&
-    //             <div>
-    //                 {items.map(item => (
-
-    //                    <div key={getRandomInt(10000)} className="card">
-    //                         <div className="container">
-    //                             <Link to={`/shop/${item.itemId}`} >{item.item.name}</Link>
-    //                             <img id='' src={item.item.images.icon}></img>
-    //                             <p>{item.item.description}</p>
-    //                         </div>
-    //                    </div>
-    //                 ))}
-    //             </div>
-
-    //         }
-    //     </div>
   );
 }
 

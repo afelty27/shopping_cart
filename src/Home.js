@@ -2,14 +2,14 @@ import React from "react";
 import { isElement } from "react-dom/test-utils";
 import "./App.css";
 
-//https://startbootstrap.com/previews/full-width-pics
+//inspiration from: https://startbootstrap.com/previews/full-width-pics
 
 function Home(props) {
   console.log("in home, shop items are: ");
   console.log(props.itemState);
 
   return (
-    <div className="App">
+    <div>
       <div
         className="py-5 bg-image-full"
         style={{
@@ -29,7 +29,7 @@ function Home(props) {
         <div className="container my-5">
           <div className="row justify-content-center">
             <div className="col-lg-6">
-              <h2>SDLKFJSLKDJFLKJD LSDj LSKDJ</h2>
+              <h2>Welcome to Shopping Cart</h2>
               <p className="lead">
                 The chic gangster liked to start the day with a pink scarf. When
                 transplanting seedlings, candied teapots will make the task

@@ -1,8 +1,3 @@
-//make sure not accessing DOM anywhere+
-//save cart to local storage so doesn't go away when refresh+
-//use local storage to automatically refill the cart when reloaded+
-//style
-
 import "./App.css";
 import React, { useState, useEffect } from "react";
 import Nav from "./Nav";
@@ -31,7 +26,7 @@ function App() {
     });
   };
 
-  //getLocalStorage for cart
+  //set initial cart items in local storage
   const getLocalStorageCartItems = () => {
     console.log("enter getLocalStorageCartItems");
     let newCartData = JSON.parse(localStorage.getItem("cart"));
@@ -45,6 +40,7 @@ function App() {
     }
   };
 
+  //set initial cart total in local storage
   const getLocalStorageCartTotal = () => {
     let newCartData = JSON.parse(localStorage.getItem("cart"));
     if (newCartData === null) {
@@ -98,7 +94,7 @@ function App() {
         };
       });
     } else {
-      //what do if already in cart??
+      //item is already in cart
     }
 
     updateCartTotal();
