@@ -1,5 +1,5 @@
 <h1>Shopping Cart Application:</h1>
-The Shopping Cart Application is an educational project that was built with the intention of learning how to use components in React, manage state, use CRUD operations, and display the results of these operations to the user in the form of a hypothetical e-commerce page (based off of a Fortnite api for items on the Fortnite shop - inspiration for this api came from: ). My goal for this application was to create components that were easy to understand while not being redundant. Additionally, my goal was to manage the state in a way that reduced confusion and made CRUD operations easy to follow throughout the components. All data is saved to local storage.
+The Shopping Cart Application is an educational project that was built with the intention of learning how to use components in React, manage state, use CRUD operations, and display the results of these operations to the user in the form of a hypothetical e-commerce page (based off of a Fortnite api for items on the Fortnite shop - inspiration for this api came from: https://www.youtube.com/watch?v=Law7wfdg_ls). My goal for this application was to create components that were easy to understand while not being redundant. Additionally, my goal was to manage the state in a way that reduced confusion and made CRUD operations easy to follow throughout the components. All data is saved to local storage.
 
 <h3> What I Learned/What I Would Do Differently:</h3>
 There are three main changes that I would make to my approach of the project if I were to redo the application.
@@ -48,5 +48,6 @@ By clicking on the shop button in the navbar, cards of 10 available items will d
 <img src="./src/images/shop2.png" alt="Shop page image bottom half">
 
 If the cart icon is clicked, the user is brought to a cart screen displaying all items currently in the cart, their price, the option to update the number of items, and the current running total. There is then a checkout button available to save the cart to local storage.
+NOTE: the images do not display in this picture of the cart as the picture was taken after the api changed, so these items are no longer available.
 
 <img src="./src/images/cart.png" alt="cart page image">
