@@ -20,18 +20,23 @@ function ItemDetail(props) {
     setItem(item);
     console.log("awaited");
     console.log(item);
+    console.log("id:");
+    console.log(params.id);
+    console.log(
+      `https://fortnite-api.theapinetwork.com/item/get?id=${params.id}`
+    );
   };
 
-  if (item && item.data.item) {
-    console.log("success");
-    console.log(item.data);
-  } else {
-    console.log("problem here");
-    console.log("Item: ");
-    console.log(item);
-    console.log("params:");
-    console.log(params.id);
-  }
+  //   if (item && item.data.item) {
+  //     console.log("success");
+  //     console.log(item.data);
+  //   } else {
+  //     console.log("problem here");
+  //     console.log("Item: ");
+  //     console.log(item);
+  //     console.log("params:");
+  //     console.log(params.id);
+  //   }
   return (
     <div>
       <div className="productDisplay">
