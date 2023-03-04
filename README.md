@@ -37,9 +37,9 @@ Api docs: https://docs.fortniteapi.com/</br>
 This application uses an Api which holds upcoming data for the items in the Fortnite shop. The api can be found at https://fortnite-api.theapinetwork.com/upcoming/get
 
 <h3>How the Application Works:</h3>
-<br>NOTE: Images not all needed images are attached as the api call problem has not yet been fixed.</br>
+NOTE: Images not all needed images are attached as the api call problem has not yet been fixed.
 
-Start by entering the home page. From here, will see a welcome page with sample text. The navbar at the top allows for the choices of entering the shop page or going to the cart.
+<br>Start by entering the home page. From here, will see a welcome page with sample text. The navbar at the top allows for the choices of entering the shop page or going to the cart.</br>
 
 <img src="./src/images/home.png" alt="Welcome page image">
 
