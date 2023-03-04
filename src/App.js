@@ -16,12 +16,21 @@ import {
 
 function App() {
   //state and update state functions for shop and cart
-  const [shopItems, setShopItems] = useState({});
+  const [shopItems, setShopItems] = useState([]);
 
   const updateShop = (itemList) => {
     setShopItems((prevState) => {
+      console.log("SET SHOP ITEMS:");
+      console.log(itemList);
+      let newList = itemList;
+      if (itemList[0].item.cost == "???") {
+        for (let i = 0; i < newList.length; i++) {
+          newList[i].item.cost = getRandomInt(50);
+        }
+      }
+
       return {
-        items: itemList,
+        items: newList,
       };
     });
   };
@@ -224,7 +233,13 @@ function App() {
           />
           <Route
             path="/shop/:id"
-            element={<ItemDetail addProductToCart={addProductToCart} />}
+            element={
+              <ItemDetail
+                addProductToCart={addProductToCart}
+                shopState={shopItems}
+                findCartItem={findCartItem}
+              />
+            }
           />
           <Route
             path="/cart"
