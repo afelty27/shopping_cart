@@ -1,7 +1,9 @@
 <h1>Shopping Cart Application:</h1>
-The Shopping Cart Application is an educational project that was built with the intention of learning how to use components in React, manage state, use CRUD operations, and display the results of these operations to the user in the form of a hypothetical e-commerce page (based off of a Fortnite api for items on the Fortnite shop - inspiration for this api came from: https://www.youtube.com/watch?v=Law7wfdg_ls). My goal for this application was to create components that were easy to understand while not being redundant. Additionally, my goal was to manage the state in a way that reduced confusion and made CRUD operations easy to follow throughout the components. All data is saved to local storage.
+The Shopping Cart Application is an educational project that was built with the intention of learning how to use components in React, manage state, use CRUD operations, and display the results of these operations to the user in the form of an e-commerce page (based off of a Fortnite api for items on the Fortnite shop - inspiration for this api came from: https://www.youtube.com/watch?v=Law7wfdg_ls). My goal for this application was to create components that were easy to understand while not being redundant. Additionally, my goal was to manage the state in a way that reduced confusion and made CRUD operations easy to follow throughout the components. All data is saved to local storage when the user clicks checkout.
 
 <h3> What I Learned/What I Would Do Differently:</h3>
+My primary learning goals for this project were basic React syntax and building components. Additionally, I learned how to use state to store and manage data that is used in a web application, as well as how to pass it between different pages on an application.
+
 There are three main changes that I would make to my approach of the project if I were to redo the application.
 
 1. All the component files were simply saved to the src directory rather than creating a specific directory to hold all component files. Creating this additional directory would help organize the files in my project in a way to make them more readible to another user. Additionally, directories for styles and images should be cleaned.
@@ -13,16 +15,16 @@ This project was inspired as a resonse to the Project: Shopping Cart lesson of t
 Create-react-app was used for initial setup of the project.
 
 <h3>Technologies Used:</h3>
-JavaScript
-React
-Bootstrap
+
+1. JavaScript
+2. React
+3. Bootstrap
 
 <h3>Build Status:</h3>
-This application is fully functional with the exception of some images do not render on the shop page. It is not finished in terms of aesthetic design.
-UPDATE: Between 1/28/23 and 2/28/23 there was an update to the api used in this application. On 1/28/23 the application functioned properly but on 2/28/23 the fetch call to the api on line 16 of ItemDetail.js returns a 404 error with the id that was received from an earlier api call. Upon checking the api calls on the Postman provided in the api docs (link below), it appearas that there is an error in GET requests for specific items, as it always returns a 404 error. As such, the ItemDetail page is currently not functioning, and the abililty to add items to the cart is also unavailable.
-However, the GET request to receive all items is still functioning. A possible solution to this issue is to simply pass the 10 specific items that were already loaded into the application to the state of ItemDetail through props as opposed to doing an additional fetch call to the api. This would also increase efficiency as it would eliminate additional calls to the api. This solution has not been implemented yet, but will be implemented soon.
-Postman for the api: https://web.postman.co/workspace/My-Workspace~caa80031-7b87-4a08-8816-edad735f17a8/request/26108438-8160dda3-0997-45a3-8970-4dc93375574f
-Api docs: https://docs.fortniteapi.com/
+<div>This application is fully functional with the exception of some images do not render on the shop page. It is not finished in terms of aesthetic design.</div>
+<div>UPDATE: Between 1/28/23 and 2/28/23 there was an update to the api used in this application. On 1/28/23 the application functioned properly but on 2/28/23 any fetch calls to the api by item id return a 404 error. Upon checking the api calls on the Postman provided in the api docs (link below), it appearas that there is an error in GET requests for specific items, as it always returns a 404 error. As such, the way that the itemDetail page renders information needed to be changed and now uses state rather than an api call. This has had the result of reducing loading time for each page as there are fewer api calls. However, when the user cart is saved to local storage and the application reloaded, the prices of each item saved to local storage may not match the newly generated prices of the items (as prices are randomized upon initial loading).</div>
+<div>Postman for the api: https://web.postman.co/workspace/My-Workspace~caa80031-7b87-4a08-8816-edad735f17a8/request/26108438-8160dda3-0997-45a3-8970-4dc93375574f
+Api docs: https://docs.fortniteapi.com/</div>
 
 <h3>Installation:</h3>
 
@@ -35,7 +37,7 @@ Api docs: https://docs.fortniteapi.com/
 This application uses an Api which holds upcoming data for the items in the Fortnite shop. The api can be found at https://fortnite-api.theapinetwork.com/upcoming/get
 
 <h3>How the Application Works:</h3>
-NOTE: Images not all needed images are attached as the api call problem has not yet been fixed.
+<div>NOTE: Images not all needed images are attached as the api call problem has not yet been fixed.</div>
 
 Start by entering the home page. From here, will see a welcome page with sample text. The navbar at the top allows for the choices of entering the shop page or going to the cart.
 
