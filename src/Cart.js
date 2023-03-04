@@ -5,9 +5,6 @@ import CartItemDisplay from "./CartItemDisplay";
 //https://mdbootstrap.com/docs/standard/extended/shopping-carts/
 
 function Cart(props) {
-  console.log("cart: ");
-  console.log(props.userCart);
-
   return (
     <div className="App container align-items-center">
       <div className="h-100 h-custom">

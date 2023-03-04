@@ -1,5 +1,4 @@
 import React from "react";
-import { isElement } from "react-dom/test-utils";
 import "./App.css";
 
 //inspiration from: https://startbootstrap.com/previews/full-width-pics

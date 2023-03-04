@@ -11,29 +11,24 @@ function Shop(props) {
 
   const [items, setItems] = useState([]);
 
+  //calls api and retrieves 10 items to display in shop
+  //shop items saved to state
   const fetchItems = async () => {
-    console.log("enter fetchItems");
-    console.log("SHOP STATE FROM APP.JS");
-    console.log(props.shopState);
-
     //check to see if shop state is already filled, if so, use it, else call api
     if (props.shopState.length === 0) {
       //get 10 items from api and set local state
       let data = await fetch(
         "https://fortnite-api.theapinetwork.com/upcoming/get"
       );
+
       const itemsJson = await data.json();
       const itemsArray = itemsJson.data.splice(0, 10);
-      console.log(itemsArray);
       setItems(itemsArray);
-
       props.setShopState(itemsArray);
     } else {
       //set items to current shop state from app.js
       setItems(props.shopState.items);
     }
-
-    console.log("exit fetch items");
   };
 
   //generate random integer between 0 and max
