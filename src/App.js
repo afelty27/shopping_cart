@@ -92,7 +92,7 @@ function App() {
         itemId: newProdObj.itemId,
         itemDescription: newProdObj.item.description,
         itemIcon: newProdObj.item.images.icon,
-        itemPrice: getRandomInt(50),
+        itemPrice: newProdObj.item.cost,
         itemQuantity: quantity,
       };
 

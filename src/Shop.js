@@ -29,7 +29,6 @@ function Shop(props) {
 
       props.setShopState(itemsArray);
     } else {
-      //SKIP SUCESSFUL!!
       //set items to current shop state from app.js
       setItems(props.shopState.items);
     }
