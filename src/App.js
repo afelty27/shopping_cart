@@ -80,6 +80,9 @@ function App() {
   //newProdObj: object from the api call of product being added
   //quantity: integer of how many of the object are requested
   const addProductToCart = (newProdObj, quantity) => {
+    console.log("ENTER ADD TO PRODUCT CART");
+    console.log("NEWPRODOBJ:");
+    console.log(newProdObj);
     //ensure item is not in cart already
     if (findCartItem(newProdObj.itemId) === -1) {
       console.log("price: " + newProdObj.item.cost);

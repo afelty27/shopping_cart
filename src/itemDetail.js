@@ -92,7 +92,7 @@ function ItemDetail(props) {
             onClick={() => {
               item && item.item
                 ? props.addProductToCart(
-                    item.item,
+                    item,
                     document.getElementById("itemDetailQuant").value
                   )
                 : console.log("error");
