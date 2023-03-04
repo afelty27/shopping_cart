@@ -21,10 +21,10 @@ Create-react-app was used for initial setup of the project.
 3. Bootstrap
 
 <h3>Build Status:</h3>
-<div>This application is fully functional with the exception of some images do not render on the shop page. It is not finished in terms of aesthetic design.</div>
-<div>UPDATE: Between 1/28/23 and 2/28/23 there was an update to the api used in this application. On 1/28/23 the application functioned properly but on 2/28/23 any fetch calls to the api by item id return a 404 error. Upon checking the api calls on the Postman provided in the api docs (link below), it appearas that there is an error in GET requests for specific items, as it always returns a 404 error. As such, the way that the itemDetail page renders information needed to be changed and now uses state rather than an api call. This has had the result of reducing loading time for each page as there are fewer api calls. However, when the user cart is saved to local storage and the application reloaded, the prices of each item saved to local storage may not match the newly generated prices of the items (as prices are randomized upon initial loading).</div>
-<div>Postman for the api: https://web.postman.co/workspace/My-Workspace~caa80031-7b87-4a08-8816-edad735f17a8/request/26108438-8160dda3-0997-45a3-8970-4dc93375574f
-Api docs: https://docs.fortniteapi.com/</div>
+This application is fully functional with the exception of some images do not render on the shop page. It is not finished in terms of aesthetic design.
+<br>UPDATE: Between 1/28/23 and 2/28/23 there was an update to the api used in this application. On 1/28/23 the application functioned properly but on 2/28/23 any fetch calls to the api by item id return a 404 error. Upon checking the api calls on the Postman provided in the api docs (link below), it appearas that there is an error in GET requests for specific items, as it always returns a 404 error. As such, the way that the itemDetail page renders information needed to be changed and now uses state rather than an api call. This has had the result of reducing loading time for each page as there are fewer api calls. However, when the user cart is saved to local storage and the application reloaded, the prices of each item saved to local storage may not match the newly generated prices of the items (as prices are randomized upon initial loading).</br>
+<br>Postman for the api: https://web.postman.co/workspace/My-Workspace~caa80031-7b87-4a08-8816-edad735f17a8/request/26108438-8160dda3-0997-45a3-8970-4dc93375574f
+Api docs: https://docs.fortniteapi.com/</br>
 
 <h3>Installation:</h3>
 
@@ -37,7 +37,7 @@ Api docs: https://docs.fortniteapi.com/</div>
 This application uses an Api which holds upcoming data for the items in the Fortnite shop. The api can be found at https://fortnite-api.theapinetwork.com/upcoming/get
 
 <h3>How the Application Works:</h3>
-<div>NOTE: Images not all needed images are attached as the api call problem has not yet been fixed.</div>
+<br>NOTE: Images not all needed images are attached as the api call problem has not yet been fixed.</br>
 
 Start by entering the home page. From here, will see a welcome page with sample text. The navbar at the top allows for the choices of entering the shop page or going to the cart.
 
