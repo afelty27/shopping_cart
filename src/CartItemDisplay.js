@@ -1,7 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./App.css";
-
-//FIX - value not updated when click up or down
 
 function CartItemDisplay(props) {
   return (

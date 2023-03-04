@@ -4,64 +4,42 @@ import { Route, useParams, Link } from "react-router-dom";
 
 function ItemDetail(props) {
   const [item, setItem] = useState();
-
   const params = useParams();
 
   useEffect(() => {
     fetchItem();
   }, []);
 
-  const fetchItem = async () => {
-    //https://fortnite-api.theapinetwork.com/item/get?id={{itemid}}
-    const fetchItem = await fetch(
-      `https://fortnite-api.theapinetwork.com/item/get?id=${params.id}`
-    );
-    const item = await fetchItem.json();
+  //fetches the item to be displayed on the page using id in URL
+  const fetchItem = () => {
+    let productId = params.id;
+
+    let index = -1;
+    for (let i = 0; i < props.shopState.items.length; i++) {
+      if (props.shopState.items[i].itemId == productId) {
+        index = i;
+      }
+    }
+    const item = props.shopState.items[index];
     setItem(item);
-    console.log("awaited");
-    console.log(item);
-    console.log("id:");
-    console.log(params.id);
-    console.log(
-      `https://fortnite-api.theapinetwork.com/item/get?id=${params.id}`
-    );
   };
 
-  //   if (item && item.data.item) {
-  //     console.log("success");
-  //     console.log(item.data);
-  //   } else {
-  //     console.log("problem here");
-  //     console.log("Item: ");
-  //     console.log(item);
-  //     console.log("params:");
-  //     console.log(params.id);
-  //   }
   return (
     <div>
       <div className="productDisplay">
         <img
-          src={
-            item && item.data.item.images.icon
-              ? `${item.data.item.images.icon}`
-              : ""
-          }
+          src={item && item.item.images.icon ? `${item.item.images.icon}` : ""}
         ></img>
         <div className="productInfo">
           <h1 id="name">
-            {item && item.data.item.name
-              ? item.data.item.name
-              : "Not loaded yet"}
+            {item && item.item.name ? item.item.name : "Not loaded yet"}
           </h1>
           <div id="price">
-            $
-            {item && item.data.item.cost
-              ? `${item.data.item.cost}`
-              : "Not loaded yet"}
+            ${item && item.item.cost ? `${item.item.cost}` : "Not loaded yet"}
           </div>
           <div className="specs">
-            {item && item.data.item.description
-              ? item.data.item.description
+            {item && item.item.description
+              ? item.item.description
               : "Not loaded yet"}
           </div>
 
@@ -76,9 +54,9 @@ function ItemDetail(props) {
           <button
             className="addBtn"
             onClick={() => {
-              item && item.data.item
+              item && item.item
                 ? props.addProductToCart(
-                    item.data,
+                    item,
                     document.getElementById("itemDetailQuant").value
                   )
                 : console.log("error");
