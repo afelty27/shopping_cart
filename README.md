@@ -1,4 +1,5 @@
 <h1>Shopping Cart Application:</h1>
+<br>Deployment Link: https://afelty27.github.io/deploy-test-shopping-cart/</br>
 The Shopping Cart Application is an educational project that was built with the intention of learning how to use components in React, manage state, use CRUD operations, and display the results of these operations to the user in the form of an e-commerce page (based off of a Fortnite api for items on the Fortnite shop - inspiration for this api came from: https://www.youtube.com/watch?v=Law7wfdg_ls). My goal for this application was to create components that were easy to understand while not being redundant. Additionally, my goal was to manage the state in a way that reduced confusion and made CRUD operations easy to follow throughout the components. All data is saved to local storage when the user clicks checkout.
 
 <h3> What I Learned/What I Would Do Differently:</h3>
@@ -21,7 +22,7 @@ Create-react-app was used for initial setup of the project.
 3. Bootstrap
 
 <h3>Build Status:</h3>
-This application is fully functional with the exception of some images do not render on the shop page. It is not finished in terms of aesthetic design.
+This application is fully functional with the exception of some images do not render on the shop page. It is not finished in terms of aesthetic design. On the first load of the website, to display all correct informaition you must first click the home button (this needs to be fixed)
 <br>UPDATE: Between 1/28/23 and 2/28/23 there was an update to the api used in this application. On 1/28/23 the application functioned properly but on 2/28/23 any fetch calls to the api by item id return a 404 error. Upon checking the api calls on the Postman provided in the api docs (link below), it appearas that there is an error in GET requests for specific items, as it always returns a 404 error. As such, the way that the itemDetail page renders information needed to be changed and now uses state rather than an api call. This has had the result of reducing loading time for each page as there are fewer api calls. However, when the user cart is saved to local storage and the application reloaded, the prices of each item saved to local storage may not match the newly generated prices of the items (as prices are randomized upon initial loading).</br>
 <br>Postman for the api: https://web.postman.co/workspace/My-Workspace~caa80031-7b87-4a08-8816-edad735f17a8/request/26108438-8160dda3-0997-45a3-8970-4dc93375574f
 Api docs: https://docs.fortniteapi.com/</br>
